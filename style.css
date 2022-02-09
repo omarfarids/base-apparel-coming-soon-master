@@ -1,0 +1,124 @@
+/* ===========================
+    ===== general styling ====
+    ========================== */
+:root {
+  font-size: 16px;
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+  --linear1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --linear2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans";
+  line-height: 1.5;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+p {
+  color: var(--Desaturated-Red);
+}
+/* ===========================
+    ========== main ==========
+    ========================== */
+main {
+  height: 100vh;
+}
+main > div {
+  padding: 50px 200px 250px 100px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 150px;
+  background: url("images/bg-pattern-desktop.svg") no-repeat top left,
+    var(--linear1);
+}
+main p:first-child {
+  color: var(--Desaturated-Red);
+  font-size: 4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 100px;
+  line-height: 1;
+}
+main p:first-child span {
+  line-height: 1;
+  font-weight: 400;
+  color: var(--Dark-Grayish-Red);
+}
+img + div.flex-column {
+  gap: 20px;
+}
+form div {
+  width: 300px;
+  position: relative;
+}
+form input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--Desaturated-Red);
+  border-radius: 20px;
+  padding-left: 20px;
+  background-image: var(--linear1);
+}
+form button {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  width: 70px;
+  height: 40px;
+  border-radius: 20px;
+  border-style: unset;
+  background-image: var(--linear2);
+  box-shadow: -2px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+form button:hover {
+  background-image: linear-gradient(135deg, hsl(0, 81%, 90%), hsl(0, 62%, 81%));
+  cursor: pointer;
+}
+/* ===========================
+    ======== mobile ==========
+    ========================== */
+@media (max-width: 375px) {
+  main {
+    width: 375px;
+  }
+  main > div {
+    padding: unset;
+    gap: 0px;
+    padding: 20px;
+    padding-bottom: 40px;
+  }
+  main p:first-child {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  main > img {
+    position: absolute;
+    top: 70px;
+    width: 375px;
+    height: 220px;
+    object-fit: cover;
+    object-position: 0px 0px;
+  }
+  img + div.flex-column {
+    gap: 10px;
+  }
+}
